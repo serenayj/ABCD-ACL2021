@@ -2,7 +2,7 @@
 
 Copyright (c) 2021 Yanjun Gao 
 
-This is the github repository for the ACL 2021 paper: ABCD: A Graph Framework to Convert Complex Sentences to a Covering Set of Simple Sentences. 
+This is the github repository for the ACL 2021 paper: ABCD: A Graph Framework to Convert Complex Sentences to a Covering Set of Simple Sentences. Please cite our paper if you are using ABCD (BibTex at the end). 
 
 ## Introduction 
 ABCD is a linguistically motivated sentence editor that decomposes a complex sentence into N simple sentences, where N corresponds to the number of predicates in the complex sentence. It first constructs a sentence graph using dependency parsing information, and edits the graph into subgraphs by a neural classifier with four graph operations: A(accept), B(break), C(copy) and D(drop). See paper for more details. Please cite our work if you are using our codes. 
@@ -75,3 +75,20 @@ As we mention in the paper, the distributions across A,B,C,D could be greatly di
 python main.py 
 ```
 Remember to change the ``root_dir`` and ``glove_dir``. The parameters in the encoder, graph attention and classifier will be stored seperately in three checkpoints.  
+
+```
+@inproceedings{gao-etal-2021-abcd,
+    title = "{ABCD}: A Graph Framework to Convert Complex Sentences to a Covering Set of Simple Sentences",
+    author = "Gao, Yanjun  and
+      Huang, Ting-Hao  and
+      Passonneau, Rebecca J.",
+    booktitle = "Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)",
+    month = aug,
+    year = "2021",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.acl-long.303",
+    doi = "10.18653/v1/2021.acl-long.303",
+    pages = "3919--3931",
+}
+```
