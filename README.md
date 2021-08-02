@@ -1,4 +1,4 @@
-# README 
+# ABCD: A Graph Framework to Convert Complex Sentences to a Covering Set of Simple Sentences -- ACL 2021 
 
 Copyright (c) 2021 Yanjun Gao 
 
@@ -52,5 +52,4 @@ Remember to modify root_dir (code directory), data_filename (the input .pkl file
 
 
 ## Train Your ABCD Model
-
 
