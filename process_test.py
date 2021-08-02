@@ -1,7 +1,3 @@
-"""
-debug process pipeline 
-"""
-
 import sys 
 import pickle 
 import re 
@@ -14,9 +10,6 @@ from data import *
 from utils import * 
 from distant_superv import *
 
-"""
-if stanford nlp 
-"""
 batch_id = "test" 
 data_path = "data"
 
