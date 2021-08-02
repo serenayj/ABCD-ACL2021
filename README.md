@@ -2,7 +2,7 @@
 
 Copyright (c) 2021 Yanjun Gao 
 
-This is the github repository for the ACL 2021 paper: ABCD: A Graph Framework to Convert Complex Sentences to a Covering Set of Simple Sentences. Please cite our paper if you are using ABCD (BibTex at the end). 
+This is the github repository for the ACL 2021 paper: [ABCD: A Graph Framework to Convert Complex Sentences to a Covering Set of Simple Sentences](https://aclanthology.org/2021.acl-long.303/). Please cite our paper if you are using ABCD (BibTex at the end). 
 
 ## Introduction 
 ABCD is a linguistically motivated sentence editor that decomposes a complex sentence into N simple sentences, where N corresponds to the number of predicates in the complex sentence. It first constructs a sentence graph using dependency parsing information, and edits the graph into subgraphs by a neural classifier with four graph operations: A(accept), B(break), C(copy) and D(drop). See paper for more details. Please cite our work if you are using our codes. 
