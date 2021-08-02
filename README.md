@@ -1,13 +1,17 @@
-# ABCD: A Graph Framework to Convert Complex Sentences to a Covering Set of Simple Sentences -- ACL 2021 
+# ABCD: A Graph Framework to Convert Complex Sentences to a Covering Set of Simple Sentences
 
 Copyright (c) 2021 Yanjun Gao 
 
-## Introduction 
-ABCD is a linguistically motivated sentence editor that decomposes a complex sentence into N simple sentences, where N corresponds to the number of predicates in the complex sentence. It first constructs a sentence graph using dependency parsing information, and edits the graph into subgraphs by a neural classifier with four graph operations: A(accept), B(break), C(copy) and D(drop). This work appears in ACL 2021 and see paper for more details. 
+This is the github repository for the ACL 2021 paper: ABCD: A Graph Framework to Convert Complex Sentences to a Covering Set of Simple Sentences. 
 
-We provide ABCD model trained on MinWiki (Wikipedia Text). You could test this pre-trained model on your data. If you are interested in training your ABCD model, we provide scripts of doing so. 
+## Introduction 
+ABCD is a linguistically motivated sentence editor that decomposes a complex sentence into N simple sentences, where N corresponds to the number of predicates in the complex sentence. It first constructs a sentence graph using dependency parsing information, and edits the graph into subgraphs by a neural classifier with four graph operations: A(accept), B(break), C(copy) and D(drop). See paper for more details. Please cite our work if you are using our codes. 
+
 
 ![Input sentence and gold simple sentences (left); sentence graph constructed by ABCD](imgs/example.png)
+
+We provide ABCD model trained on MinWiki (Wikipedia Text). You could test this pre-trained model on your data. If you are interested in training your ABCD model, we provide scripts of doing so. The main differences between testing and training is the distant supervision labels generated through preprocessor. At training time, we use distant supervision labels to train the neural classifier to predict the four edit types. At testing time, we do not need the distant supervision signals anymore. 
+
 
 ### Table of Contents
 **[Dependencies](#dependencies)**<br>
@@ -60,9 +64,14 @@ We provide scripts to help you train your ABCD model. You need to run your data 
 ```
 python process_data.py # different preprocessor than test time 
 ```
+Recall that we rely on distant supervision labels to train the network, which are generated at this step. 
+
+### Step 2:  Get an inverse frequency weights from the distant supervision labels 
+As we mention in the paper, the distributions across A,B,C,D could be greatly different depending on the dataset and the linguistic phenamena. We encourage you to take a step to get an inverse frequency weights from the gold labels created from Step 1, and replace the weights in the main.py (under config) for your data.  
+
 
 ### Step 2:  Train the ABCD model using main.py 
 ```
 python main.py 
 ```
-Remember to change the ``root_dir`` and ``glove_dir``. 
+Remember to change the ``root_dir`` and ``glove_dir``. The parameters in the encoder, graph attention and classifier will be stored seperately in three checkpoints.  
