@@ -33,8 +33,8 @@ ABCD uses pre-trained GloVe embeddings (100d) to initialize the word representat
 
 ## Test with Trained Models  
 
-### Step1: Download pretrained models from [Link](https://drive.google.com/file/d/146NQ9vx5GOcHn1geGI-WgjGEJ-RE5w-4/view?usp=sharing) to this code package 
-Default is model trained on MinWiki. 
+### Step 1: Download pretrained model from these links:
+Default is the ABCD model trained on Minwiki, with MLP classifier[Link](https://drive.google.com/file/d/146NQ9vx5GOcHn1geGI-WgjGEJ-RE5w-4/view?usp=sharing), or with Bilinear classifier[Link](https://drive.google.com/file/d/1I11gAVngLSaTJASYr9zyUCAiRhnkWx8f/view?usp=sharing) 
 
 
 ### Step 2: Run your CoreNLP output data with a preprocessor:
@@ -48,8 +48,20 @@ Output is a pickle file, with sentence ids as keys, preprocssed graph as values.
 ```
 python test.py 
 ```
-Remember to modify root_dir (code directory), data_filename (the input .pkl filename after preprocessing) and glove_dir (where you store glove.6B.100d.txt). Output is a pickle file storing a output dictionary where the keys are sentence indices and values are predicted strings. Another argument output_str_to_file is set to True to generate clean output txt file. 
+Remember to modify ``root_dir`` (code directory), ``data_filename`` (the input .pkl filename after preprocessing) and ``glove_dir`` (where you store glove.6B.100d.txt). Also modify the ``pretrained_path`` to specify the folder of pretrained models, and ``classifer`` for the type of classfier the pre-trained model using. Output of this script is a pickle file storing a output dictionary where the keys are sentence indices and values are predicted strings and action predictions. Another argument output_str_to_file is set to True to generate clean output txt file. 
 
 
-## Train Your ABCD Model
+## Training ABCD
+We provide scripts to help you train your ABCD model. You need to run your data through stanford CoreNLP first. 
 
+### Step 1:  Run your CoreNLP output data with a preprocessor:
+```
+python process_data.py # different preprocessor than test time 
+```
+
+
+### Step 2:  Train the ABCD model using main.py 
+```
+python main.py 
+```
+Remember to change the ``root_dir`` and ``glove_dir``. 

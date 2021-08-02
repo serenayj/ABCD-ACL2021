@@ -93,7 +93,8 @@ for _ in range(0, len(sents)):
 	output_arcs[_] = {}
 	vtov, vtoi = wordict(words) 
 	itov = {v:k for k,v in vtoi.items()}
-	adjs, conn_adjs = BuildAdj(vtoi, tmp) # connected nodes by neighbor, adj: nodes connected by dependency arcs
+	adjs, conn_adjs = BuildAdj(vtoi, tups)
+	#adjs, conn_adjs = BuildAdj(vtoi, tmp) # connected nodes by neighbor, adj: nodes connected by dependency arcs
 	# Get all pairs of src, tgt, arcs 
 	all_pairs = BuildPairs(adjs) 
 	# Add self arc to indicate if a word being dropped  
