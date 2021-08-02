@@ -7,7 +7,7 @@ ABCD is a linguistically motivated sentence editor that decomposes a complex sen
 
 We provide ABCD model trained on MinWiki (Wikipedia Text). You could test this pre-trained model on your data. If you are interested in training your ABCD model, we provide scripts of doing so. 
 
-![Sentence Graph Constructed by ABCD](imgs/abcd-graph.png)
+![Input sentence and gold simple sentences (left); sentence graph constructed by ABCD](imgs/example.png)
 
 ### Table of Contents
 **[Dependencies](#dependencies)**<br>
