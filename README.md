@@ -2,10 +2,10 @@
 
 Copyright (c) 2021 Yanjun Gao 
 
-This is the github repository for the ACL 2021 paper: [ABCD: A Graph Framework to Convert Complex Sentences to a Covering Set of Simple Sentences](https://aclanthology.org/2021.acl-long.303/). Please cite our paper if you are using ABCD (BibTex at the end). 
+This is the github repository for the ACL 2021 paper: [ABCD: A Graph Framework to Convert Complex Sentences to a Covering Set of Simple Sentences](https://aclanthology.org/2021.acl-long.303/). Please cite our paper if you are using ABCD (BibTex at the end). You could also find the [slides](ABCD-ACL-2021-Talk.pdf) from my oral presentation. 
 
 ## Introduction 
-ABCD is a linguistically motivated sentence editor that decomposes a complex sentence into N simple sentences, where N corresponds to the number of predicates in the complex sentence. It first constructs a sentence graph using dependency parsing information, and edits the graph into subgraphs by a neural classifier with four graph operations: A(accept), B(break), C(copy) and D(drop). See paper for more details. Please cite our work if you are using our codes. 
+ABCD is a linguistically motivated sentence editor that decomposes a complex sentence into N simple sentences, where N corresponds to the number of predicates in the complex sentence. It first constructs a sentence graph using dependency parsing information, and edits the graph into subgraphs by a neural classifier with four graph operations: A(accept), B(break), C(copy) and D(drop). Depending on your applications and data, ABCD could be flexibly trained to keep (or drop) connectives, simplify. See paper for more details.  
 
 
 ![Input sentence and gold simple sentences (left); sentence graph constructed by ABCD](imgs/example.png)
@@ -70,7 +70,7 @@ Recall that we rely on distant supervision labels to train the network, which ar
 As we mention in the paper, the distributions across A,B,C,D could be greatly different depending on the dataset and the linguistic phenamena. We encourage you to take a step to get an inverse frequency weights from the gold labels created from Step 1, and replace the weights in the main.py (under config) for your data.  
 
 
-### Step 2:  Train the ABCD model using main.py 
+### Step 3:  Train the ABCD model using main.py 
 ```
 python main.py 
 ```
