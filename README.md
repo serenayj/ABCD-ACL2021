@@ -18,6 +18,7 @@ We provide ABCD model trained on MinWiki (Wikipedia Text). You could test this p
 **[Prerequisites](#prerequisites)**<br>
 **[Testing](#test)**<br>
 **[Training](#train)**<br>
+**[Corpus](#corpus)**<br>
 
 
 ## Dependencies
@@ -92,3 +93,7 @@ Remember to change the ``root_dir`` and ``glove_dir``. The parameters in the enc
     pages = "3919--3931",
 }
 ```
+
+## Corpus
+
+Our ACL paper mentions two corpus that we train and evaluate ABCD on: the MinWiki and DeSSE. If you are interested in training/evaluating your model on these two corpus, refer to [this github repository](https://github.com/serenayj/DeSSE) for more details. 
