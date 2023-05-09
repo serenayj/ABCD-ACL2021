@@ -33,7 +33,7 @@ cfg = {"dataset":"MinWiki_MatchVP",
 			"hidden_dim":800,
 			"dropout":0.2, 
 			"weight_label": True,
-			"classifer": "MLP", 
+			"classifer": "MLP", # Use Bilinear or MLP
 			"gradient_clip":None,
 			"root_dir": "/Users/sailormoon/Downloads/ABCD_parser-main/",
 			"glove_dir": "/Users/sailormoon/Desktop/", 
